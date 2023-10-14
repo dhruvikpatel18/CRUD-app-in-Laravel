@@ -28,5 +28,7 @@ route::get('/',[mycontroller::class,'readdata']);
 route::get('updatedelete',[mycontroller::class,'updateordelete']);
 
 route::get('updatedata',[mycontroller::class,'update']);
+route::get('moredata',[mycontroller::class,'more'])->middleware('auth')->name('moredata.more');
+// route::get('moredata',[mycontroller::class,'more'])->middleware('auth')->name(moredata);
 
 ?> 

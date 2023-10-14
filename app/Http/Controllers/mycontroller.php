@@ -14,11 +14,13 @@ class mycontroller extends Controller
        $piamge= $req->file('image')->getClientOriginalName();
        //move uploded file
        $req->image->move(public_path('images'), $piamge);
+       $pmore= $req->get('pmore');
 
        $prod = new product();
        $prod -> PName = $name;
        $prod -> PPrice = $price;
        $prod -> PImage = $piamge;
+       $prod -> PMore = $pmore;
        $prod->save();
        return redirect('/');
     }
@@ -49,5 +51,26 @@ class mycontroller extends Controller
         $prod->PPrice = $Price;
         $prod->save();
         return redirect('/');
+    }
+    function more(Request $req){
+        $id = $req->get('id');
+        // $prod = product::find($Id);
+
+        // return view('more' , ['prod' => $prod]);
+
+        // // if($prod){
+        // //     return view('more' , ['prod' => $prod]);
+        // // }else{
+        // //     return redirect('/')->with('error','product not found');
+        // // }
+
+        $pdata = product::all();
+        return view('more' , ['id'=>$id,'data' => $pdata]);
+
+        // $prod = product::find($id);
+        // return view('more' , ['id'=>$id,'data' => $prod]);
+
+        
+
     }
 }

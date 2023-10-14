@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('PName');
             $table->string('PPrice');
             $table->string('PImage');
+            $table->string('PMore');
             $table->timestamps();
         });
     }

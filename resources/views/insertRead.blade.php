@@ -26,6 +26,9 @@
 <input type="text" placeholder="Enter Product price" class="form-control" name="pprice" id="">
 </div>
 <div class="mb-2">
+  <input type="text" placeholder="Enter Product description" class="form-control" name="pmore" id="">
+  </div>
+<div class="mb-2">
 <input type="file"class="form-control" name="image" id="">
 </div>
 <button type="submit" class="btn btn-outline-danger fw-bold rounded-pill">
@@ -53,6 +56,7 @@
       <th scope="col">Image</th>
       <th scope="col">Update</th>
       <th scope="col">Delete</th>
+      <th scope="col">More Details</th>
     </tr>
   </thead>
   <tbody class="text-danger bg-light fs-4">
@@ -66,6 +70,9 @@
       <td class="pt-5"><img src="images/{{$item['PImage']}}" width="80px" height="80px"></td>
       <td class="pt-5"><input type="submit" class="btn btn-outline-danger rounded-pill" name="update" value="Update"></td>
       <td class="pt-5"><input type="submit" class="btn btn-outline-danger rounded-pill" name="delete" value="Delete"></td>
+      </form>
+      <form action="moredata" method="get">
+        <td class="pt-5"><input type="submit" class="btn btn-outline-danger rounded-pill" name="more" value="show more"></td>
       </form>
     </tr>
     @endforeach

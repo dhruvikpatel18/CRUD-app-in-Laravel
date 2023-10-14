@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1 class="text-center text-danger mt-3">Laravel CRUD operation</h1>
+    <h1 class="text-center text-danger mt-3">Laravel CRUD Operation By Dhruvik</h1>
     @yield('content')
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
