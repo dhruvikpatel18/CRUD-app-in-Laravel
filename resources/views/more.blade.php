@@ -1,27 +1,6 @@
 @extends('welcome')
-{{-- <center>
+
 @section('content')
-
-<div class="container">
-    <div class="row">
-        @foreach ($data as $item)
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="images/{{$item['PImage']}}" class="card-img-top" alt="{{$item['PName']}}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$item['PName']}}</h5>
-                        <p class="card-text">{{$item['PMore']}}</p>
-                        <p class="card-text">Price: ₹{{$item['PPrice']}}</p>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
-</div>
-@endsection
-</center> --}}
-
-
 <!doctype html>
 <html>
 
@@ -273,6 +252,11 @@ label.radio input:checked+span::before {
 
 <body oncontextmenu='return false' class='snippet-body'>
   <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
+
+  @if (Route::has('login'))
+
+  @auth
+
   @foreach ($data as $item)
   <div class="container-fluid mt-2 mb-3">
     <div class="row no-gutters">
@@ -294,7 +278,7 @@ label.radio input:checked+span::before {
           <hr>
           <div class="comment-section">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex flex-row align-items-center"> <img src="https://ibb.co/tJz9f4w" class="rounded-circle profile-image">
+              <div class="d-flex flex-row align-items-center"> <img src="https://i.imgur.com/tmdHXOY.jpg" class="rounded-circle profile-image">
                 <div class="d-flex flex-column ml-1 comment-profile">
                   <div class="comment-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span class="username">Dhruvik Patel</span>
                 </div>
@@ -348,29 +332,29 @@ label.radio input:checked+span::before {
         </div>
         <div class="card mt-2"> <span>Similar items:</span>
           <div class="similar-products mt-2 d-flex flex-row">
-            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://i.imgur.com/KZpuufK.jpg" class="card-img-top" alt="...">
+            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYBh9eDQDdK38aczFegcAcEQ7AUznqbmHKdA&usqp=CAU" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">$1,999</h6>
+                <h6 class="card-title">₹98000</h6>
               </div>
             </div>
-            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://i.imgur.com/GwiUmQA.jpg" class="card-img-top" alt="...">
+            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjejlH5GMGOp932EGiUdNL5sdjJTnE21N6Dg&usqp=CAU" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">$1,699</h6>
+                <h6 class="card-title">₹78000</h6>
               </div>
             </div>
-            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://i.imgur.com/c9uUysL.jpg" class="card-img-top" alt="...">
+            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzjkL2yLqdFNpg1hAtZaT8VAlINPtOPDyMKQ&usqp=CAU" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">$2,999</h6>
+                <h6 class="card-title">₹67999</h6>
               </div>
             </div>
-            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://i.imgur.com/kYWqL7k.jpg" class="card-img-top" alt="...">
+            <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LNcXxOT5Llcp0ZazjQ1uEHfJuJNEInItrQ&usqp=CAU" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">$3,999</h6>
+                <h6 class="card-title">₹91999</h6>
               </div>
             </div>
-            <div class="card border p-1" style="width: 9rem;"> <img src="https://i.imgur.com/DhKkTrG.jpg" class="card-img-top" alt="...">
+            <div class="card border p-1" style="width: 9rem;"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGGvC_xGP9ZlbWAon0ym8h-_-6zc8CeRXtw&usqp=CAU" class="card-img-top" alt="...">
               <div class="card-body">
-                <h6 class="card-title">$999</h6>
+                <h6 class="card-title">₹74999</h6>
               </div>
             </div>
           </div>
@@ -379,10 +363,22 @@ label.radio input:checked+span::before {
     </div>
   </div>
   @endforeach
+
+  @else
+  <script>
+    window.alert('You are not loggedin!!');
+    window.location.replace("http://localhost:8000/");
+    </script>  
+  
+
+  @endauth
+  @endif
+
+
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
   <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
   <script>
-
+    
   </script>
   <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js'></script>
   <script type='text/javascript' src=''></script>
@@ -391,3 +387,5 @@ label.radio input:checked+span::before {
 </body>
 
 </html>
+
+@endsection

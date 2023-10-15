@@ -13,6 +13,13 @@
 <div class="mb-2">
 <input type="text" placeholder="Enter Product price" class="form-control" value="{{$pprice}}" name="price" id="">
 </div>
+<div class="mb-2">
+    <input type="text" placeholder="Enter Product Description" class="form-control" value="{{$pmore}}" name="more" id="">
+    </div>
+
+    <div class="mb-2">
+        <input type="file"class="form-control" name="image" id="">
+        </div>
 <input type="hidden" name="id" value="{{$id}}">
 <button type="submit" class="btn btn-outline-warning fw-bold rounded-pill">
         Update Record

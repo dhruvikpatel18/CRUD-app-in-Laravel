@@ -33,9 +33,10 @@ class mycontroller extends Controller
         $id = $req->get('id');
         $name = $req->get('name');
         $price = $req->get('price');
+        $more = $req->get('more');
 
         if($req->get('update') == 'Update'){
-             return view('updateview' , ['id'=>$id , 'pname'=>$name, 'pprice' => $price ]);
+             return view('updateview' , ['id'=>$id , 'pname'=>$name, 'pprice' => $price, 'pmore' =>$more ]);
         }else{
             $prod = product::find($id);
             $prod->delete();
@@ -46,6 +47,7 @@ class mycontroller extends Controller
         $Id = $req->get('id');
         $Name = $req->get('name');
         $Price = $req->get('price');
+        // $desc = $req->get('more');
         $prod = product::find($Id);
         $prod->PName = $Name;
         $prod->PPrice = $Price;
